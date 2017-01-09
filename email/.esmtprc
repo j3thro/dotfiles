@@ -1,0 +1,5 @@
+identity "my.email@gmail.com"
+hostname smtp.gmail.com:587
+username "my.email@gmail.com"
+password "ThisIsNotARealPassWord"
+starttls required
