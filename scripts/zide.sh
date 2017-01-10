@@ -1,6 +1,8 @@
 rm -rf ~/.vim*
 git clone git://github.com/zenhack/vim-config ~/.vim
 mkdir -p ~/.vim/colors
+mkdir -p ~/.vim/plugins
+cp linuxsty.vim ~/.vim/plugins
 #cp ~/Dropbox/obsidian.vim ~/.vim/colors/
 git clone https://github.com/Shougo/neocomplete.vim.git  ~/.vim/bundle/neocomplete.vim
 rm ~/.vim/vimrc && cp vimrc ~/.vim/vimrc

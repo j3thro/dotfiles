@@ -196,5 +196,13 @@ set cursorcolumn   cursorline
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"  Linux kernel coding style
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:linuxsty_patterns = [ "/usr/src/", "/linux", "~/git/kernels/" ]
+
+
 inoremap <C-s> <esc>:w<cr>a
 nnoremap <C-s> :w<cr>a
