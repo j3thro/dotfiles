@@ -3,7 +3,10 @@
 
 # system update
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install git stow screen
+sudo apt-get install git stow screen keychain
+
+mkdir -p ~/git/ && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
 
 # install settings
 stow vim	-t ~
