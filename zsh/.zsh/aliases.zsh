@@ -17,7 +17,9 @@
 #█▓▒░ aliases
 alias ll="ls -lahF --color=auto"
 alias ls="ls -hF --color=auto"
+alias la="ls -a"
 alias lsl="ls -lhF --color=auto"
+alias sduo="sudo"
 alias "cd.."="cd ../"
 alias up="cd ../"
 alias rmrf="rm -rf"
@@ -30,6 +32,8 @@ alias xsel="xsel -b"
 alias fuck='sudo $(fc -ln -1)'
 alias v="vim"
 alias vi="vim"
+alias Ez="vim ~/.zsh/aliases.zsh"
+alias Et="vim ~/.todo"
 alias g="hub"
 alias ga="git add"
 alias gc="git commit -m"
@@ -83,7 +87,7 @@ c() {
   done
 }
 # colorized less
-l() {
+lesssss() {
   pygmentize -O style=sourcerer -f console256 -g $1 | less -r
 }
 # read markdown files like manpages

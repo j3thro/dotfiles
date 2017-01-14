@@ -1,57 +1,108 @@
-!  ██     ██      ██           ████                    ██   ██          
-! ░░██   ██      ░██          ░██░                    ░██  ░██          
-!  ░░██ ██       ░██  █████  ██████  ██████   ██   ██ ░██ ██████  ██████
-!   ░░███     ██████ ██░░░██░░░██░  ░░░░░░██ ░██  ░██ ░██░░░██░  ██░░░░ 
-!    ██░██   ██░░░██░███████  ░██    ███████ ░██  ░██ ░██  ░██  ░░█████ 
-!   ██ ░░██ ░██  ░██░██░░░░   ░██   ██░░░░██ ░██  ░██ ░██  ░██   ░░░░░██
-!  ██   ░░██░░██████░░██████  ░██  ░░████████░░██████ ███  ░░██  ██████ 
-! ░░     ░░  ░░░░░░  ░░░░░░   ░░    ░░░░░░░░  ░░░░░░ ░░░    ░░  ░░░░░░  
-!
-!  ▓▓▓▓▓▓▓▓▓▓
-! ░▓ author ▓ xero <x@xero.nu>
-! ░▓ code   ▓ http://code.xero.nu/dotfiles
-! ░▓ mirror ▓ http://git.io/.files
-! ░▓▓▓▓▓▓▓▓▓▓
-! ░░░░░░░░░░
-!
+! Set default font
+!URxvt*font: xft:Liberation Mono for Powerline:pixelsize=17
+!URxvt*boldFont: xft:Liberation Mono for Powerline:bold:pixelsize=17
+urxvt*font:                    -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso8859-1
+urxvt*boldFont:                -*-terminus-medium-*-*-*-20-*-*-*-*-*-iso8859-1
 
-#include </home/xero/sourcerer.Xcolors>
+! Display and configure scrollbar
+URxvt*saveLines: 12000
+URxvt*scrollBar: true
+URxvt*scrollstyle: plain
+URxvt*scrollBar_right: true
+URxvt*scrollColor: #bfff00
 
-! █▓▒░ fonts
-urxvt*font: xft:gohufont:size=11:antialias=false, \
-            xft:Symbola:pixelsize=14:antialias=true:hinting=slight
-!urxvt*font: -*-creep-regular-*-*--16-*-*-*-*-*-*-1
-!urxvt*font: -*-lime-*-*-*--11-*-*-*-*-*-*-1
-!urxvt*font: xft:creep:size=16:antialias=true
-!urxvt*font: xft:envy code r:size=9:antialias=false
-!urxvt*font: xft:lemon:size=16:antialias=false
-!urxvt*font: xft:lime:size=16:antialias=false
-!urxvt*font: xft:neep:size=11:antialias=false
-!urxvt*font: xft:perfect dos vga 437:size=11:antialias=false
-!urxvt*font: xft:tewi:size=11:antialias=false
+! Set transparent background
+URxvt*transparent: true
+URxvt*shading:70
 
-urxvt*boldFont: 
-urxvt*italicFont: 
-urxvt*bolditalicFont: 
 
-urxvt*letterSpace: 0
-urxvt*lineSpace: -1
+!######################### Colorscheme settings ########################!
 
-! █▓▒░ interface
-urxvt*scrollBar: false
-urxvt*transparent: false
-!urxvt*shading: 38
+! █▓▒░ scorcerer colors
+*.foreground:   #c2c2b0
+*.background:   #222222
+*.cursorColor:  #c2c2b0
+! black
+*.color0:       #111111
+*.color8:       #181818
+! red
+*.color1:       #aa4450
+*.color9:       #ff6a6a
+! green
+*.color2:       #719611
+*.color10:      #b1d631
+! yellow
+*.color3:       #cc8800
+*.color11:      #ff9800
+! blue
+*.color4:       #6688aa
+*.color12:      #90b0d1
+! magenta
+*.color5:       #8f6f8f
+*.color13:      #8181a6
+! cyan
+*.color6:       #528b8b
+*.color14:      #87ceeb
+! white
+*.color7:       #d3d3d3
+*.color15:      #c1cdc1
+! stylized
+*.colorIT:      #719611
+*.colorBD:      #d3d3d3
+*.colorUL:      #528b8b
 
-! █▓▒░ clipboard
-urxvt.perl-ext-common: default,clipboard,keyboard-select
-urxvt.keysym.M-Escape: perl:keyboard-select:activate
-urxvt.keysym.M-c:   perl:clipboard:copy
-urxvt.keysym.C-v:   perl:clipboard:paste
-urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-urxvt.clipboard.copycmd:  xsel -ib
-urxvt.clipboard.pastecmd: xsel -ob
 
-! █▓▒░ misc
-urxvt.saveLines: 9999
-urxvt.iso14755: false
-!URxvt*altSendsEscape: true
+!###################### Load diffrent perl scripts #####################!
+URxvt.perl-ext-common:  ...,resize-font,font-size,url-select,tabbed,keyboard-select,clipboard
+
+!######################         Tab color          #####################!
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+!######################         Self config        #####################!
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+
+!############### Perl script related bindings and config ###############!
+! I = Altgr
+
+! Bindings for on the fly font size change
+URxvt.keysym.I-Up:     perl:font-size:increase
+URxvt.keysym.I-Down:   perl:font-size:decrease
+URxvt.keysym.I-S-Up:   perl:font-size:incglobal
+URxvt.keysym.I-S-Down: perl:font-size:decglobal
+
+! Bindings for keyboard url selection
+! Altgr - u
+URxvt.keysym.downarrow: perl:url-select:select_next
+URxvt.url-select.button: 1
+URxvt.url-select.launcher: google-chrome
+URxvt.url-select.underline: true
+
+! Bindings for keyboard selection
+URxvt.keysym.I-Escape: perl:keyboard-select:activate
+! Altgr - s
+URxvt.keysym.ssharp: perl:keyboard-select:search
+
+! Bindings for clipboard plugin
+! Altgr - c
+URxvt.keysym.copyright:   perl:clipboard:copy
+! Altgr - v
+URxvt.keysym.leftdoublequotemark:   perl:clipboard:paste
+! Use Xclip to handle copy paste
+URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+
+!###############################
+!   Personal setting
+!###############################
+URxvt.iso14755 : false
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
