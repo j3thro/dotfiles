@@ -73,6 +73,7 @@ alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙──�
 alias todo="head -10 ~/.todo"
 alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" #pass a filename
 alias nexus="jmtpfs ~/nexus"
+alias ChangeT="sudo update-alternatives --config x-terminal-emulator"
 tmx() {
   [[ $# -eq 0 ]] && bash ~/bin/tmx 0 || bash ~/bin/tmx $#
 }
@@ -103,6 +104,42 @@ short() {
 # Add linux kernel dev aliaes
 alias gl="git log --pretty=oneline --abbrev-commit"
 
+# personal utils
+alias F="nautilus ."
+alias g11='g++ -std=c++11 -O2'
+alias g="g++ -std=gnu++11 -Wall -Wextra -g"
+alias leet="./~/workspace/practise-cpp/leetcode/comments.sh"
+
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ..='cd ..'
+alias ...="cd ..."
+alias sduo="sudo"
+alias gits="git status"
+alias workon="source .venv/bin/activate"
+alias walkaway="deactivate"
+alias jn="jupyter notebook"
+alias F="nautilus ."
+alias cls="clear"
+alias vi="vim"
+alias ee="emacsclient"
+
+alias Cl="rm -rf \~"
+alias update="sudo apt-get update && sudo apt-get upgrade"
+alias gs="git status"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gcam="git commit -am"
+alias gl="git log --graph --decorate --oneline"
+
+# workon
+alias devhaas="ssh hack-n-hil.prb.massopencloud.org"
 
 
 
+# end of [aliases.zsh]

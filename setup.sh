@@ -18,3 +18,6 @@ stow urxvt 	-t ~
 # linux kernnel dev setup
 sudo update-alternatives --config editor
 
+# use zsh
+chsh -s $(which zsh)
+
