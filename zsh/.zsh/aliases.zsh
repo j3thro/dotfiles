@@ -64,9 +64,10 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias lol="base64 </dev/urandom | lolcat"
 alias apt="sudo apt"
-alias update="pacman-colors && yaourt -Syua"
+alias update="sudo apt update "   #"pacman-colors && yaourt -Syua"
+alias docker="sudo docker"
 alias systemctl="sudo systemctl"
-alias :q="sudo systemctl poweroff"
+alias :q="sudo reboot"
 alias ZZ="quit"
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 #alias todo="bash ~/code/sys/todo"
@@ -100,7 +101,6 @@ short() {
   curl -F"shorten=$*" https://0x0.st
 }
 
-
 # Add linux kernel dev aliaes
 alias gl="git log --pretty=oneline --abbrev-commit"
 
@@ -109,7 +109,6 @@ alias F="nautilus ."
 alias g11='g++ -std=c++11 -O2'
 alias g="g++ -std=gnu++11 -Wall -Wextra -g"
 alias leet="./~/workspace/practise-cpp/leetcode/comments.sh"
-
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -122,10 +121,13 @@ alias gits="git status"
 alias workon="source .venv/bin/activate"
 alias walkaway="deactivate"
 alias jn="jupyter notebook"
-alias F="nautilus ."
+alias F="thunar ."
 alias cls="clear"
 alias vi="vim"
 alias ee="emacsclient"
+alias Z="zsh"
+alias Ea="vim ~/.zsh/aliases.zsh"
+alias Ez="vim ~/.zsh/environment.zsh"
 
 alias Cl="rm -rf \~"
 alias update="sudo apt-get update && sudo apt-get upgrade"
@@ -138,8 +140,11 @@ alias gcam="git commit -am"
 alias gl="git log --graph --decorate --oneline"
 
 # workon
-alias devhaas="ssh hack-n-hil.prb.massopencloud.org"
+alias hack-n-hil="ssh hack-n-hil.prb.massopencloud.org"
+alias haas-beta="ssh haas-beta.prb.massopencloud.org"
 
+# tasks
+alias t='python ~/Public/t/t.py --task-dir ~/tasks --list tasks'
 
 
 # end of [aliases.zsh]

@@ -16,7 +16,7 @@
 #
 
 # thefuck
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 #█▓▒░ load configs
 for config (~/.zsh/*.zsh) source $config

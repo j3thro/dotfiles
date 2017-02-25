@@ -1,11 +1,11 @@
-#                 ██      
-#                ░██      
-#  ██████  ██████░██      
-# ░░░░██  ██░░░░ ░██████  
-#    ██  ░░█████ ░██░░░██ 
-#   ██    ░░░░░██░██  ░██ 
-#  ██████ ██████ ░██  ░██ 
-# ░░░░░░ ░░░░░░  ░░   ░░  
+#                 ██
+#                ░██
+#  ██████  ██████░██
+# ░░░░██  ██░░░░ ░██████
+#    ██  ░░█████ ░██░░░██
+#   ██    ░░░░░██░██  ░██
+#  ██████ ██████ ░██  ░██
+# ░░░░░░ ░░░░░░  ░░   ░░
 #
 #  ▓▓▓▓▓▓▓▓▓▓
 # ░▓ author ▓ xero <x@xero.nu>
@@ -18,7 +18,7 @@
 #HIST_STAMPS=mm/dd/yyyy
 
 #█▓▒░ paths
-export PATH=$HOME/bin:/usr/local/bin:/home/xero/.gem/ruby/2.2.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
 #█▓▒░ preferred editor for local and remote sessions
@@ -36,3 +36,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LESSCHARSET=utf-8
+
+# golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/workspace/goto
+export GOROOT=/usr/local/go
+
