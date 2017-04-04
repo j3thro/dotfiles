@@ -49,3 +49,9 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	zle -N zle-line-init
 	zle -N zle-line-finish
 fi
+
+# my setting
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# 

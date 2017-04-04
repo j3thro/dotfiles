@@ -1,3 +1,13 @@
 [user]
 	name = Shuwen (Jethro) Sun
 	email = shwsun@bu.edu
+[push]
+  default = simple
+[grep]
+	linenumber = true
+[alias]
+	ov = -c core.pager='less -S' log --graph --pretty=format:'%C(auto)%d %s' --abbrev-commit --simplify-by-decoration --all
+	ovk = !gitk --all --simplify-by-decoration
+  random = !"git add -A; git commit -am \"$(echo $(curl -s http://whatthecommit.com/index.txt)\" (http://whatthecommit.com)\")\"; git pull --rebase; git push"
+
+

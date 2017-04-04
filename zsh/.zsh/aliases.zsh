@@ -30,8 +30,8 @@ alias scp="scp -r"
 alias mkdir="mkdir -p"
 alias xsel="xsel -b"
 alias fuck='sudo $(fc -ln -1)'
-alias v="vim"
-alias vi="vim"
+#alias v="vim"
+#alias vi="vim"
 alias Ez="vim ~/.zsh/aliases.zsh"
 alias Et="vim ~/.todo"
 alias g="hub"
@@ -143,8 +143,15 @@ alias gl="git log --graph --decorate --oneline"
 alias hack-n-hil="ssh hack-n-hil.prb.massopencloud.org"
 alias haas-beta="ssh haas-beta.prb.massopencloud.org"
 
-# tasks
+# t-tasks
 alias t='python ~/Public/t/t.py --task-dir ~/tasks --list tasks'
+
+# ubuntu special
+alias open="gnome-open"
+
+# dropbox shortcut
+alias StatDropbox="~/.dropbox/dropbox.py status"
+
 
 
 # end of [aliases.zsh]
