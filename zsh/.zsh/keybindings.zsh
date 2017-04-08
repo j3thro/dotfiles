@@ -54,4 +54,27 @@ fi
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# 
+bindkey -e                      # Default to Emacs-like bindings
+
+zle -N parent-dir
+parent-dir() {
+    local cursor=$CURSOR        # Save cursor position
+    local buffer=$BUFFER        # Save buffer contents
+    BUFFER=                     # Clear edit buffer
+    zle -R                      # Redraw the now empty input line
+    local i cmd=..              # Consume numeric argument
+    for (( i = 1 ; i < NUMERIC ; i++ )); do
+        cmd=$cmd/..
+    done
+    print "cd $cmd"             # So it's clear what's happening from scrollback
+    cd $cmd
+    # XXX reset-prompt doesn't work on zsh 4.0.x
+    zle reset-prompt -N         # Redraw the prompt itself
+    BUFFER=$buffer              # Restore the buffer contents
+    CURSOR=$cursor              # And move the cursor back to where it was
+}
+bindkey '\C-u' parent-dir
+
+
+
+# end of 

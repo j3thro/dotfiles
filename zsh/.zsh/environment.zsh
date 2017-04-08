@@ -42,3 +42,6 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/workspace/goto
 export GOROOT=/usr/local/go
 
+# java 
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+

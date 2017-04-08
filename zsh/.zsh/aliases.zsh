@@ -27,13 +27,9 @@ alias psef="ps -ef"
 alias mkdir="mkdir -p"
 alias cp="cp -r"
 alias scp="scp -r"
-alias mkdir="mkdir -p"
 alias xsel="xsel -b"
 alias fuck='sudo $(fc -ln -1)'
-#alias v="vim"
-#alias vi="vim"
-alias Ez="vim ~/.zsh/aliases.zsh"
-alias Et="vim ~/.todo"
+
 alias g="hub"
 alias ga="git add"
 alias gc="git commit -m"
@@ -64,7 +60,7 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias lol="base64 </dev/urandom | lolcat"
 alias apt="sudo apt"
-alias update="sudo apt update "   #"pacman-colors && yaourt -Syua"
+#alias update="sudo apt update "   #"pacman-colors && yaourt -Syua"
 alias docker="sudo docker"
 alias systemctl="sudo systemctl"
 alias :q="sudo reboot"
@@ -104,8 +100,9 @@ short() {
 # Add linux kernel dev aliaes
 alias gl="git log --pretty=oneline --abbrev-commit"
 
+# ------------------------------
 # personal utils
-alias F="nautilus ."
+# ------------------------------
 alias g11='g++ -std=c++11 -O2'
 alias g="g++ -std=gnu++11 -Wall -Wextra -g"
 alias leet="./~/workspace/practise-cpp/leetcode/comments.sh"
@@ -117,7 +114,10 @@ alias l='ls -CF'
 alias ..='cd ..'
 alias ...="cd ..."
 alias sduo="sudo"
-alias gits="git status"
+
+#
+alias Cl="rm -rf \~"
+alias update="sudo apt-get update && sudo apt-get upgrade"
 alias workon="source .venv/bin/activate"
 alias walkaway="deactivate"
 alias jn="jupyter notebook"
@@ -125,12 +125,23 @@ alias F="thunar ."
 alias cls="clear"
 alias vi="vim"
 alias ee="emacsclient"
+
+# grep and find
+alias grep="grep --color=auto"
+#alias finp="f() {find "$1" -iname "${@:2}"};f"
+#alias cfinp="f() {find . -iname "${@:2}"};f"
+#alias fin="f() {find "$1" -iname "*${@:2}*"};f"
+#alias cfin="f() {find . -iname "*${@:1}*"};f"
+#alias rgp="f() {rg -p "$@" | less -r};f"
+
+# for zsh
 alias Z="zsh"
 alias Ea="vim ~/.zsh/aliases.zsh"
 alias Ez="vim ~/.zsh/environment.zsh"
+alias Eg="source ~/.zgoogle"
 
-alias Cl="rm -rf \~"
-alias update="sudo apt-get update && sudo apt-get upgrade"
+# git alias
+alias gits="git status"
 alias gs="git status"
 alias gc="git checkout"
 alias gcb="git checkout -b"
@@ -152,6 +163,18 @@ alias open="gnome-open"
 # dropbox shortcut
 alias StatDropbox="~/.dropbox/dropbox.py status"
 
+# utils
+alias Docker-clean="docker ps --filter 'status=exited' | grep 'weeks ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm"
 
+
+#----------------------------------
+# stuff from oh-my-zsh
+#----------------------------------
+alias ta="tmux attach -t"
+alias tad="tmux attach -d -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
 
 # end of [aliases.zsh]
