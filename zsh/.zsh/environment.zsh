@@ -42,6 +42,10 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/workspace/goto
 export GOROOT=/usr/local/go
 
-# java 
+# java
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+# For notetaking
+export NOTES_DIR=$HOME/Dropbox/GS
+
 

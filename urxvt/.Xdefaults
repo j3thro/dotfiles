@@ -1,8 +1,8 @@
 ! Set default font
 !URxvt*font: xft:Liberation Mono for Powerline:pixelsize=17
 !URxvt*boldFont: xft:Liberation Mono for Powerline:bold:pixelsize=17
-urxvt*font:                    -*-terminus-medium-*-*-*-17-*-*-*-*-*-iso8859-1
-urxvt*boldFont:                -*-terminus-medium-*-*-*-17-*-*-*-*-*-iso8859-1
+urxvt*font:                    -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-1
+urxvt*boldFont:                -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-1
 
 ! Display and configure scrollbar
 URxvt*saveLines: 12000
