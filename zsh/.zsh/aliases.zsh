@@ -177,4 +177,94 @@ alias tl="tmux list-sessions"
 alias tksv="tmux kill-server"
 alias tkss="tmux kill-session -t"
 
+# jonhoo
+
+# make less better
+# X = leave content on-screen
+# F = quit automatically if less than one screenfull
+# R = raw terminal characters (fixes git diff)
+#     see http://jugglingbits.wordpress.com/2010/03/24/a-better-less-playing-nice-with-git/
+export LESS="-F -X -R"
+
+# Color aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias mplayer='mplayer -msgcolor'
+# Common aliases
+alias more='less'
+# Convenience aliases
+alias lll='ls -la'
+alias ll='ls -l'
+alias l='ls'
+alias run='sudo systemctl start'
+alias restart='sudo systemctl restart'
+alias stop='sudo systemctl stop'
+alias x='sudo netctl'
+alias gc='git checkout'
+alias gs='git status -s'
+alias ca='git commit -a -m'
+alias xt='date +%s'
+alias ..='cd ..'
+# make
+alias ,='make'
+# file handlers
+alias o='xdg-open'
+# update command
+alias p="sudo pacman"
+alias y="yaourt"
+if [ -e /usr/bin/yaourt ]; then
+  alias up="yaourt -Syu --aur"
+else
+  alias up="sudo pacman -Syu"
+fi
+# editing
+alias e='$EDITOR'
+# Safety first
+alias mv='mv -i'
+
+# Type - to move up to top parent dir which is a repository
+function - {
+  local p=""
+  for f in `pwd | tr '/' ' '`; do
+    p="$p/$f"
+    if [ -e "$p/.git" ]; then
+      cd "$p"
+      break
+    fi
+  done
+}
+
+# Replace part of current path and cd to it
+function cdd {
+  cd `pwd | sed "s/$1/$2/"`
+}
+
+# Clever way of watching for file read/pipe progress
+# Kudos to https://coderwall.com/p/g-drlg
+function watch_progress {
+  local file=$1
+  local size=`sudo du -b $file | awk '{print $1}'`
+  local pid=${2:-`
+    sudo lsof -F p $file | cut -c 2- | head -n 1
+  `}
+
+  local watcher=/tmp/watcher-$$
+  cat <<EOF > $watcher
+file=$file
+size=$size
+pid=$pid
+EOF
+
+  cat <<'EOF' >> $watcher
+line=`sudo lsof -o -o 0 -p $pid | grep $file`
+position=`echo $line | awk '{print $7}' | cut -c 3-`
+progress=`echo "scale=2; 100 * $position / $size" | bc`
+echo pid $pid reading $file: $progress% done
+EOF
+
+  chmod +x /tmp/watcher-$$
+  watch /tmp/watcher-$$
+}
+
+
 # end of [aliases.zsh]
